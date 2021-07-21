@@ -13,6 +13,7 @@ import java.util.List;
 @Entity
 @TypeDef(name = "list-array", typeClass = ListArrayType.class)
 @Table(name = "etp_data", schema = "public", catalog = "etpreport")
+@Data
 public class EtpData {
 
     @Id
@@ -62,145 +63,8 @@ public class EtpData {
 
     @OneToOne
     @JoinColumn(name = "task_id", referencedColumnName = "id")
+    @ToString.Exclude
     private Task task;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getTask_id() {
-        return task_id;
-    }
-
-    public void setTask_id(Long task_id) {
-        this.task_id = task_id;
-    }
-
-    public String getServiceNumber() {
-        return serviceNumber;
-    }
-
-    public void setServiceNumber(String serviceNumber) {
-        this.serviceNumber = serviceNumber;
-    }
-
-    public String getFrontRequest() {
-        return frontRequest;
-    }
-
-    public void setFrontRequest(String frontRequest) {
-        this.frontRequest = frontRequest;
-    }
-
-    public String getFrontHeaders() {
-        return frontHeaders;
-    }
-
-    public void setFrontHeaders(String frontHeaders) {
-        this.frontHeaders = frontHeaders;
-    }
-
-    public String getAppQueue() {
-        return appQueue;
-    }
-
-    public void setAppQueue(String appQueue) {
-        this.appQueue = appQueue;
-    }
-
-    public String getAppQueueQm() {
-        return appQueueQm;
-    }
-
-    public void setAppQueueQm(String appQueueQm) {
-        this.appQueueQm = appQueueQm;
-    }
-
-    public String getStatusQueue() {
-        return statusQueue;
-    }
-
-    public void setStatusQueue(String statusQueue) {
-        this.statusQueue = statusQueue;
-    }
-
-    public String getStatusQueueQm() {
-        return statusQueueQm;
-    }
-
-    public void setStatusQueueQm(String statusQueueQm) {
-        this.statusQueueQm = statusQueueQm;
-    }
-
-    public String getOivStatus() {
-        return oivStatus;
-    }
-
-    public void setOivStatus(String oivStatus) {
-        this.oivStatus = oivStatus;
-    }
-
-    public String getWorkDescription() {
-        return workDescription;
-    }
-
-    public void setWorkDescription(String workDescription) {
-        this.workDescription = workDescription;
-    }
-
-    public String getTrText() {
-        return trText;
-    }
-
-    public void setTrText(String trText) {
-        this.trText = trText;
-    }
-
-    public String getPmiTaskText() {
-        return pmiTaskText;
-    }
-
-    public void setPmiTaskText(String pmiTaskText) {
-        this.pmiTaskText = pmiTaskText;
-    }
-
-    public String getPmiResultText() {
-        return pmiResultText;
-    }
-
-    public void setPmiResultText(String pmiResultText) {
-        this.pmiResultText = pmiResultText;
-    }
-
-    public Task getTask() {
-        return task;
-    }
-
-    public void setTask(Task task) {
-        this.task = task;
-    }
-
-    @Override
-    public String toString() {
-        return "EtpData{" +
-                "id=" + id +
-                ", task_id=" + task_id +
-                ", serviceNumber='" + serviceNumber + '\'' +
-                ", frontRequest='" + frontRequest + '\'' +
-                ", frontHeaders='" + frontHeaders + '\'' +
-                ", appQueue='" + appQueue + '\'' +
-                ", appQueueQm='" + appQueueQm + '\'' +
-                ", statusQueue='" + statusQueue + '\'' +
-                ", statusQueueQm='" + statusQueueQm + '\'' +
-                ", oivStatus='" + oivStatus + '\'' +
-                ", workDescription='" + workDescription + '\'' +
-                ", trText='" + trText + '\'' +
-                ", pmiTaskText='" + pmiTaskText + '\'' +
-                ", pmiResultText='" + pmiResultText + '\'' +
-                '}';
-    }
 }
